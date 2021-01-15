@@ -11,10 +11,10 @@ public class L9Ex3 {
         System.out.println("Nhập vào chuỗi họ tên cần kiểm tra: ");
         var fullName = input.nextLine(); // đọc cả dòng họ tên
         // tiến hành kiểm tra:
-
-        if(fullName.matches(".*[a-zA-Z\\s]+.*")) {
+        // nếu họ tên không khớp: chỉ chứa chữ cái và dấu cách
+        if(!fullName.matches(".*[a-zA-Z\\s]+.*")) {
             System.out.println("Họ tên không hợp lệ.");
-        } else {
+        } else { // ngược lại họ tên là hợp lệ
             System.out.println("Chuỗi họ tên hợp lệ.");
         }
     }
