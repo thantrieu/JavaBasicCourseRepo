@@ -15,11 +15,20 @@ public class L8Ex7 {
         var input = new Scanner(System.in);
         System.out.println("Nhập vào số nguyên dương n: ");
         var n = input.nextInt(); // đọc n
-        var randNumber = Math.random() * Math.pow(10, n); // sinh số ngẫu nhiên
+        var randNumber = Math.random() * Math.pow(10, countDigitsOfN(n)); // sinh số ngẫu nhiên
         var tmp = (int)randNumber; // ép kiểu sang int
         var result = tmp % n; // lấy dư để đảm bảo kết quả trong [0, n)
         // hiện kết quả:
         System.out.println(result);
+    }
+
+    private static int countDigitsOfN(int n) {
+        int count = 1;
+        while(n > 0) {
+            count++;
+            n /= 10;
+        }
+        return count;
     }
 }
 // code xong ấn Ctrl Alt L để format code
